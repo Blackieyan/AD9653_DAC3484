@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="AD_DA_project_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="AD_DA_project_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="62" />
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/parallel_data" type="array">
+      <obj_property name="ElementShortName">parallel_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">parallel_data[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d0_p" type="array">
+      <obj_property name="ElementShortName">a_d0_p[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d0_p[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d0_n" type="array">
+      <obj_property name="ElementShortName">a_d0_n[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d0_n[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d1_p" type="array">
+      <obj_property name="ElementShortName">a_d1_p[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d1_p[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d1_n" type="array">
+      <obj_property name="ElementShortName">a_d1_n[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d1_n[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_p" type="logic">
+      <obj_property name="ElementShortName">OSC_in_p</obj_property>
+      <obj_property name="ObjectShortName">OSC_in_p</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_n" type="logic">
+      <obj_property name="ElementShortName">OSC_in_n</obj_property>
+      <obj_property name="ObjectShortName">OSC_in_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/DCO_p" type="logic">
+      <obj_property name="ElementShortName">DCO_p</obj_property>
+      <obj_property name="ObjectShortName">DCO_p</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/DCO_n" type="logic">
+      <obj_property name="ElementShortName">DCO_n</obj_property>
+      <obj_property name="ObjectShortName">DCO_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fCO_p" type="logic">
+      <obj_property name="ElementShortName">fCO_p</obj_property>
+      <obj_property name="ObjectShortName">fCO_p</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/clk_1g" type="logic">
+      <obj_property name="ElementShortName">clk_1g</obj_property>
+      <obj_property name="ObjectShortName">clk_1g</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/user_pushbutton_g" type="logic">
+      <obj_property name="ElementShortName">user_pushbutton_g</obj_property>
+      <obj_property name="ObjectShortName">user_pushbutton_g</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_period" type="other">
+      <obj_property name="ElementShortName">OSC_in_period</obj_property>
+      <obj_property name="ObjectShortName">OSC_in_period</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/dco_period" type="other">
+      <obj_property name="ElementShortName">dco_period</obj_property>
+      <obj_property name="ObjectShortName">dco_period</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fco_period" type="other">
+      <obj_property name="ElementShortName">fco_period</obj_property>
+      <obj_property name="ObjectShortName">fco_period</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/clk_1g_period" type="other">
+      <obj_property name="ElementShortName">clk_1g_period</obj_property>
+      <obj_property name="ObjectShortName">clk_1g_period</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/data_a" type="array">
+      <obj_property name="ElementShortName">data_a[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_a[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fCO_n" type="logic">
+      <obj_property name="ElementShortName">fCO_n</obj_property>
+      <obj_property name="ObjectShortName">fCO_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/fifo_a_dout" type="array">
+      <obj_property name="ElementShortName">fifo_a_dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_a_dout[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/Inst_a_d0_serdes_in/iserdes3_parallel_data" type="array">
+      <obj_property name="ElementShortName">iserdes3_parallel_data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">iserdes3_parallel_data[0:7]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Reversed">true</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/Inst_a_d1_serdes_in/data_in_idelay_s" type="logic">
+      <obj_property name="ElementShortName">data_in_idelay_s</obj_property>
+      <obj_property name="ObjectShortName">data_in_idelay_s</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/Inst_a_d0_serdes_in/data_in_idelay_s" type="logic">
+      <obj_property name="ElementShortName">data_in_idelay_s</obj_property>
+      <obj_property name="ObjectShortName">data_in_idelay_s</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider296">
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/div_clk" type="logic">
+      <obj_property name="ElementShortName">div_clk</obj_property>
+      <obj_property name="ObjectShortName">div_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/clk_dly" type="logic">
+      <obj_property name="ElementShortName">clk_dly</obj_property>
+      <obj_property name="ObjectShortName">clk_dly</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/up_dld" type="logic">
+      <obj_property name="ElementShortName">up_dld</obj_property>
+      <obj_property name="ObjectShortName">up_dld</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_p" type="array">
+      <obj_property name="ElementShortName">a_d0_p[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d0_p[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_n" type="array">
+      <obj_property name="ElementShortName">a_d0_n[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d0_n[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_p" type="array">
+      <obj_property name="ElementShortName">a_d1_p[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d1_p[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_n" type="array">
+      <obj_property name="ElementShortName">a_d1_n[0:0]</obj_property>
+      <obj_property name="ObjectShortName">a_d1_n[0:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a0_dwdata" type="array">
+      <obj_property name="ElementShortName">a0_dwdata[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a0_dwdata[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a1_dwdata" type="array">
+      <obj_property name="ElementShortName">a1_dwdata[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a1_dwdata[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/Inst_a_d0_serdes_in/iserdes3_parallel_data" type="array">
+      <obj_property name="ElementShortName">iserdes3_parallel_data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">iserdes3_parallel_data[0:7]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Reversed">true</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider76">
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSERDES_CORE_inst2/parallel_data" type="array">
+      <obj_property name="ElementShortName">parallel_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">parallel_data[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSERDES_CORE_inst1/parallel_data" type="array">
+      <obj_property name="ElementShortName">parallel_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">parallel_data[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/bitslip" type="logic">
+      <obj_property name="ElementShortName">bitslip</obj_property>
+      <obj_property name="ObjectShortName">bitslip</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSERDES_CORE_inst1/parallel_clk" type="logic">
+      <obj_property name="ElementShortName">parallel_clk</obj_property>
+      <obj_property name="ObjectShortName">parallel_clk</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider77">
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s0" type="logic">
+      <obj_property name="ElementShortName">a_d0_s0</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s0</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s1" type="logic">
+      <obj_property name="ElementShortName">a_d0_s1</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s1</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s2" type="logic">
+      <obj_property name="ElementShortName">a_d0_s2</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s2</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s3" type="logic">
+      <obj_property name="ElementShortName">a_d0_s3</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s3</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s4" type="logic">
+      <obj_property name="ElementShortName">a_d0_s4</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s4</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s5" type="logic">
+      <obj_property name="ElementShortName">a_d0_s5</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s5</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s6" type="logic">
+      <obj_property name="ElementShortName">a_d0_s6</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s6</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d0_s7" type="logic">
+      <obj_property name="ElementShortName">a_d0_s7</obj_property>
+      <obj_property name="ObjectShortName">a_d0_s7</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s0" type="logic">
+      <obj_property name="ElementShortName">a_d1_s0</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s0</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s1" type="logic">
+      <obj_property name="ElementShortName">a_d1_s1</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s1</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s2" type="logic">
+      <obj_property name="ElementShortName">a_d1_s2</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s2</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s3" type="logic">
+      <obj_property name="ElementShortName">a_d1_s3</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s3</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s4" type="logic">
+      <obj_property name="ElementShortName">a_d1_s4</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s4</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s5" type="logic">
+      <obj_property name="ElementShortName">a_d1_s5</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s5</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s6" type="logic">
+      <obj_property name="ElementShortName">a_d1_s6</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s6</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a_d1_s7" type="logic">
+      <obj_property name="ElementShortName">a_d1_s7</obj_property>
+      <obj_property name="ObjectShortName">a_d1_s7</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a0_drdata" type="array">
+      <obj_property name="ElementShortName">a0_drdata[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a0_drdata[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a1_drdata" type="array">
+      <obj_property name="ElementShortName">a1_drdata[4:0]</obj_property>
+      <obj_property name="ObjectShortName">a1_drdata[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a0_delay_locked" type="logic">
+      <obj_property name="ElementShortName">a0_delay_locked</obj_property>
+      <obj_property name="ObjectShortName">a0_delay_locked</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_inst/AD9653_top_inst/Inst_DATAs_IOB/a1_delay_locked" type="logic">
+      <obj_property name="ElementShortName">a1_delay_locked</obj_property>
+      <obj_property name="ObjectShortName">a1_delay_locked</obj_property>
+   </wvobject>
+</wave_config>
