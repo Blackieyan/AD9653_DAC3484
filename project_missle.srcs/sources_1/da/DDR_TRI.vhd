@@ -82,14 +82,17 @@ architecture Behavioral of DDR_TRI is
 --  signal CLKFB_IN :std_logic;
 --  signal CLKFB_OUT :std_logic;
 ---------------------------------------------------------------------------------
-  component DDR_out
-    port(
-      CLK0 : in  std_logic;
-      D0   : in  std_logic_vector(15 downto 0);
-      D1   : in  std_logic_vector(15 downto 0);
-      Q    : out std_logic_vector(15 downto 0)
-      );
-  end component;
+  -- component ODDR_module
+  --   port(
+  --     CLK0 : in  std_logic;
+  --     D0   : in  std_logic_vector(15 downto 0);
+  --     D1   : in  std_logic_vector(15 downto 0);
+  --     valid : in std_logic;
+  --     Q    : out std_logic_vector(15 downto 0);
+  --     frame : out std_logic;
+  --     sync : out std_logic
+  --     );
+  -- end component;
 
 
 
@@ -128,13 +131,15 @@ architecture Behavioral of DDR_TRI is
 -------------------------------------------------------------------------------
 begin
 
-  DDR_out_ABCD : DDR_out
-    port map(
-      CLK0 => CLK1_500m,
-      D0   => dout_fifo(31 downto 16),
-      D1   => dout_fifo(15 downto 0),
-      Q    => Q
-      );
+  -- DDR_out_ABCD : DDR_out
+  --   port map(
+  --     CLK0 => CLK1_500m,
+  --     D0   => dout_fifo(31 downto 16),
+  --     D1   => dout_fifo(15 downto 0),
+  --     valid => valid,
+  --     frame => frame,
+  --     Q    => Q
+  --     );
 
   fifoABCD : fifo_64in32out512depth
     port map (
@@ -184,35 +189,35 @@ begin
   end process;
 
 
-  ODDR_inst1 : ODDR
-    generic map(
-      DDR_CLK_EDGE => "OPPOSITE_EDGE",  -- "OPPOSITE_EDGE" or "SAME_EDGE" 
-      INIT         => '0',  -- Initial value for Q port ('1' or '0')
-      SRTYPE       => "ASYNC")          -- Reset Type ("ASYNC" or "SYNC")
-    port map (
-      Q  => Frame,                      -- 1-bit DDR output
-      C  => CLK1_500m,                  -- 1-bit clock input
-      CE => '1',                        -- 1-bit clock enable input
-      D1 => valid,                      -- 1-bit data input (positive edge)
-      D2 => valid,                      -- 1-bit data input (negative edge)
-      R  => '0',                        -- 1-bit reset input
-      S  => '0'                         -- 1-bit set input
-      );
+  -- ODDR_inst1 : ODDR
+  --   generic map(
+  --     DDR_CLK_EDGE => "OPPOSITE_EDGE",  -- "OPPOSITE_EDGE" or "SAME_EDGE" 
+  --     INIT         => '0',  -- Initial value for Q port ('1' or '0')
+  --     SRTYPE       => "ASYNC")          -- Reset Type ("ASYNC" or "SYNC")
+  --   port map (
+  --     Q  => Frame,                      -- 1-bit DDR output
+  --     C  => CLK1_500m,                  -- 1-bit clock input
+  --     CE => '1',                        -- 1-bit clock enable input
+  --     D1 => valid,                      -- 1-bit data input (positive edge)
+  --     D2 => valid,                      -- 1-bit data input (negative edge)
+  --     R  => '0',                        -- 1-bit reset input
+  --     S  => '0'                         -- 1-bit set input
+  --     );
 
-  ODDR_inst2 : ODDR
-    generic map(
-      DDR_CLK_EDGE => "OPPOSITE_EDGE",  -- "OPPOSITE_EDGE" or "SAME_EDGE" 
-      INIT         => '0',  -- Initial value for Q port ('1' or '0')
-      SRTYPE       => "ASYNC")          -- Reset Type ("ASYNC" or "SYNC")
-    port map (
-      Q  => SYNC,                       -- 1-bit DDR output
-      C  => CLK1_500m,                  -- 1-bit clock input
-      CE => '1',                        -- 1-bit clock enable input
-      D1 => valid,                      -- 1-bit data input (positive edge)
-      D2 => valid,                      -- 1-bit data input (negative edge)
-      R  => '0',                        -- 1-bit reset input
-      S  => '0'                         -- 1-bit set input
-      );
+  -- ODDR_inst2 : ODDR
+  --   generic map(
+  --     DDR_CLK_EDGE => "OPPOSITE_EDGE",  -- "OPPOSITE_EDGE" or "SAME_EDGE" 
+  --     INIT         => '0',  -- Initial value for Q port ('1' or '0')
+  --     SRTYPE       => "ASYNC")          -- Reset Type ("ASYNC" or "SYNC")
+  --   port map (
+  --     Q  => SYNC,                       -- 1-bit DDR output
+  --     C  => CLK1_500m,                  -- 1-bit clock input
+  --     CE => '1',                        -- 1-bit clock enable input
+  --     D1 => valid,                      -- 1-bit data input (positive edge)
+  --     D2 => valid,                      -- 1-bit data input (negative edge)
+  --     R  => '0',                        -- 1-bit reset input
+  --     S  => '0'                         -- 1-bit set input
+  --     );
 
 end Behavioral;
 
