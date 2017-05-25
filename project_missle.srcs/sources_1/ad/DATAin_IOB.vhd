@@ -4,7 +4,7 @@
 -- 
 -- Create Date: 2017/05/06 16:12:48
 -- Design Name: 
--- Module Name: DATAs_IOB - Behavioral
+-- Module Name: DATAin_IOB - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -37,7 +37,7 @@ use UNISIM.vcomponents.all;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity DATAs_IOB is
+entity DATAin_IOB is
   port (
     rst_n   : in  std_logic;
     clk     : in  std_logic;
@@ -50,9 +50,9 @@ entity DATAs_IOB is
     ----------------------------------------------------------------------------
     data_A  : out std_logic_vector(15 downto 0)
     );
-end DATAs_IOB;
+end DATAin_IOB;
 
-architecture Behavioral of DATAs_IOB is
+architecture Behavioral of DATAin_IOB is
 
   -- component ad_serdes_in
   --   port(

@@ -63,7 +63,7 @@ architecture Behavioral of ADC_interface is
 
 
   
-component DATAs_IOB is
+component DATAin_IOB is
   port (
     rst_n   : in  std_logic;
     clk     : in  std_logic;
@@ -74,7 +74,7 @@ component DATAs_IOB is
     a_d1_p  : in  std_logic;
     a_d1_n  : in  std_logic;
     data_A  : out std_logic_vector(15 downto 0));
-end component DATAs_IOB;
+end component DATAin_IOB;
 
   component fifo_generator_0
     port (
@@ -93,7 +93,7 @@ end component DATAs_IOB;
 
 begin
 
-DATAs_IOB_1: entity work.DATAs_IOB
+DATAin_IOB_1: DATAin_IOB
   port map (
     rst_n   => rst_n,
     clk     => dco,
