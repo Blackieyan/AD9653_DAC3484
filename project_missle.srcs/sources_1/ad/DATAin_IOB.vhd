@@ -53,7 +53,8 @@ entity DATAin_IOB is
 end DATAin_IOB;
 
 architecture Behavioral of DATAin_IOB is
-
+attribute KEEP : string;
+attribute KEEP of data_A: signal is "TRUE";
   -- component ad_serdes_in
   --   port(
   --     rst          : in  std_logic;

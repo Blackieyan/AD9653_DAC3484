@@ -87,15 +87,15 @@ architecture Behavioral of AD_DA_project is
   signal dco_div       : std_logic;
   signal rst_n         : std_logic;
   signal bitslip       : std_logic;
-  signal Addr_in : std_logic_vector(7 downto 0);
-  signal Addr_en : std_logic;
-  signal data_in : std_logic_vector(15 downto 0);
-  signal reg_rst_n : std_logic;
-  signal reg_rdy : std_logic;
- signal Data_A             : std_logic_vector(15 downto 0) := x"0000";
-  signal Data_B             : std_logic_vector(15 downto 0) := x"1111";
-  signal Data_C             : std_logic_vector(15 downto 0) := x"2222";
-  signal data_D             : std_logic_vector(15 downto 0) := x"3333";
+  signal Addr_in       : std_logic_vector(7 downto 0);
+  signal Addr_en       : std_logic;
+  signal data_in       : std_logic_vector(15 downto 0);
+  signal reg_rst_n     : std_logic;
+  signal reg_rdy       : std_logic;
+  signal Data_A        : std_logic_vector(15 downto 0) := x"0000";
+  signal Data_B        : std_logic_vector(15 downto 0) := x"1111";
+  signal Data_C        : std_logic_vector(15 downto 0) := x"2222";
+  signal data_D        : std_logic_vector(15 downto 0) := x"3333";
   component ADC_interface is
     port (
       rst_n       : in  std_logic;
@@ -163,8 +163,8 @@ architecture Behavioral of AD_DA_project is
 
   component config_reg_data is
     port (
-      clk : in std_logic;
-      Addr_en : out STD_LOGIC;
+      clk     : in  std_logic;
+      Addr_en : out std_logic;
       Addr_in : out std_logic_vector(7 downto 0);
       Data_in : out std_logic_vector(15 downto 0)
       );
@@ -187,7 +187,7 @@ begin
   DAC_interface_inst : DAC_interface
     port map (
       rst_n     => rst_n,
-      CLK       => CLK_500M,                 -- clk 500MHz 0degree
+      CLK       => CLK_500M,            -- clk 500MHz 0degree
       CLK_div   => CLK_250M,            --clk 250MHz
       Q_p       => Q_p,
       Q_n       => Q_n,
@@ -201,7 +201,7 @@ begin
       Data_B    => Data_B,
       Data_C    => Data_C,
       Data_D    => Data_D,
-      DataCLk   => CLK_500M_quar);            -- clk 500MHz 90degree shift
+      DataCLk   => CLK_500M_quar);      -- clk 500MHz 90degree shift
 
   spi_config_inst : spi_config
     port map (
@@ -238,12 +238,12 @@ begin
   ---------------------------------------------------------------------------
   ---------------------------------------------------------------------------
   --spi control  data
-  config_reg_data_inst: config_reg_data
+  config_reg_data_inst : config_reg_data
     port map (
       clk     => CLK_250M,
       Addr_en => Addr_en,
       Addr_in => Addr_in,
       Data_in => Data_in);
-  
-  
+
+
 end Behavioral;
