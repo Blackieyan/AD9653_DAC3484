@@ -76,7 +76,7 @@ bitslip,
   // parameters
 
   parameter   DEVICE_TYPE     = 1;
-  parameter   IODELAY_CTRL    = 1;
+  parameter   IODELAY_CTRL    = 0;
   parameter   IODELAY_GROUP   = "dev_if_delay_group";
   // SDR = 0 / DDR = 1
   parameter   IF_TYPE         = 1;
@@ -84,8 +84,8 @@ bitslip,
   parameter   PARALLEL_WIDTH  = 8;
 
   localparam  DEVICE_6SERIES  = 0;
-  localparam  DEVICE_7SERIES  = 0;
-   localparam  DEVICE_ULTRASCALE  = 1;
+  localparam  DEVICE_7SERIES  = 1;
+   localparam  DEVICE_ULTRASCALE  = 0;
   localparam  SDR             = 0;
   localparam  DDR             = 1;
 
@@ -181,6 +181,8 @@ bitslip,
       .LD (up_dld), //Loads the IDELAYE2 primitive to the pre-programmed value
       .CNTVALUEIN (up_dwdata), //Counter value from FPGA logic for dynamically loadable tap value.
       .CNTVALUEOUT (up_drdata)); //Counter value going to FPGA logic for monitoring tap value.
+
+     
 
     // Note: The first sample in time will be data_s7, the last data_s0!
     if(IF_TYPE == SDR) begin

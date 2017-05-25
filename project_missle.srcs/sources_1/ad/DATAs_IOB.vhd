@@ -39,122 +39,125 @@ use UNISIM.vcomponents.all;
 
 entity DATAs_IOB is
   port (
-    rst_n     : in  std_logic;
-    clk       : in  std_logic;
-    div_clk   : in  std_logic;
-    clk_dly   : in  std_logic;
-    up_dld    : in  std_logic;
-    a_d0_p    : in  std_logic_vector(0 downto 0);
-    a_d0_n    : in  std_logic_vector(0 downto 0);
-    a_d1_p    : in  std_logic_vector(0 downto 0);
-    a_d1_n    : in  std_logic_vector(0 downto 0);
-    a0_dwdata : in  std_logic_vector(4 downto 0);
-    a1_dwdata : in  std_logic_vector(4 downto 0);
-    bitslip : in std_logic;
+    rst_n   : in  std_logic;
+    clk     : in  std_logic;
+    -- clkB    : in  std_logic;
+    div_clk : in  std_logic;
+    a_d0_p  : in  std_logic;
+    a_d0_n  : in  std_logic;
+    a_d1_p  : in  std_logic;
+    a_d1_n  : in  std_logic;
     ----------------------------------------------------------------------------
-    a_d0_s0   : out std_logic;
-    a_d0_s1   : out std_logic;
-    a_d0_s2   : out std_logic;
-    a_d0_s3   : out std_logic;
-    a_d0_s4   : out std_logic;
-    a_d0_s5   : out std_logic;
-    a_d0_s6   : out std_logic;
-    a_d0_s7   : out std_logic;
-
-    a_d1_s0 : out std_logic;
-    a_d1_s1 : out std_logic;
-    a_d1_s2 : out std_logic;
-    a_d1_s3 : out std_logic;
-    a_d1_s4 : out std_logic;
-    a_d1_s5 : out std_logic;
-    a_d1_s6 : out std_logic;
-    a_d1_s7 : out std_logic;
-
-    a0_drdata : out std_logic_vector(4 downto 0);
-    a1_drdata : out std_logic_vector(4 downto 0);
-
-    a0_delay_locked : out std_logic;
-    a1_delay_locked : out std_logic
-
+    data_A  : out std_logic_vector(15 downto 0)
     );
 end DATAs_IOB;
 
 architecture Behavioral of DATAs_IOB is
-  component ad_serdes_in
-    port(
+
+  -- component ad_serdes_in
+  --   port(
+  --     rst          : in  std_logic;
+  --     clk          : in  std_logic;
+  --     div_clk      : in  std_logic;
+  --     data_in_p    : in  std_logic_vector(0 downto 0);
+  --     data_in_n    : in  std_logic_vector(0 downto 0);
+  --     up_clk       : in  std_logic;
+  --     up_dld       : in  std_logic;
+  --     up_dwdata    : in  std_logic_vector(4 downto 0);
+  --     delay_clk    : in  std_logic;
+  --     delay_rst    : in  std_logic;
+  --     data_s0      : out std_logic;
+  --     data_s1      : out std_logic;
+  --     data_s2      : out std_logic;
+  --     data_s3      : out std_logic;
+  --     data_s4      : out std_logic;
+  --     data_s5      : out std_logic;
+  --     data_s6      : out std_logic;
+  --     data_s7      : out std_logic;
+  --     up_drdata    : out std_logic_vector(4 downto 0);
+  --     bitslip : in std_logic;
+  --     delay_locked : out std_logic
+  --     );
+  -- end component;
+
+  component iserdes is
+    port (
       rst          : in  std_logic;
       clk          : in  std_logic;
+      -- clkB         : in  std_logic;
       div_clk      : in  std_logic;
-      data_in_p    : in  std_logic_vector(0 downto 0);
-      data_in_n    : in  std_logic_vector(0 downto 0);
-      up_clk       : in  std_logic;
-      up_dld       : in  std_logic;
-      up_dwdata    : in  std_logic_vector(4 downto 0);
-      delay_clk    : in  std_logic;
-      delay_rst    : in  std_logic;
-      data_s0      : out std_logic;
-      data_s1      : out std_logic;
-      data_s2      : out std_logic;
-      data_s3      : out std_logic;
-      data_s4      : out std_logic;
-      data_s5      : out std_logic;
-      data_s6      : out std_logic;
-      data_s7      : out std_logic;
-      up_drdata    : out std_logic_vector(4 downto 0);
-      bitslip : in std_logic;
-      delay_locked : out std_logic
-      );
-  end component;
+      data_in0_p   : in  std_logic;
+      data_in0_n   : in  std_logic;
+      data_in1_p   : in  std_logic;
+      data_in1_n   : in  std_logic;
+      BITSLIP_low  : in  std_logic;
+      BITSLIP_high : in  std_logic;
+      data_combine : out std_logic_vector(15 downto 0));
+  end component iserdes;
+-------------------------------------------------------------------------------
 begin
 
-  Inst_a_d0_serdes_in : ad_serdes_in port map(
-    rst          => not rst_n,
-    clk          => clk,
-    div_clk      => div_clk,
-    data_s0      => a_d0_s0,
-    data_s1      => a_d0_s1,
-    data_s2      => a_d0_s2,
-    data_s3      => a_d0_s3,
-    data_s4      => a_d0_s4,
-    data_s5      => a_d0_s5,
-    data_s6      => a_d0_s6,
-    data_s7      => a_d0_s7,
-    data_in_p    => a_d0_p,
-    data_in_n    => a_d0_n,
-    up_clk       => clk_dly,
-    up_dld       => up_dld,  --Loads the IDELAYE2 primitive to the pre-programmed value
-    up_dwdata    => a0_dwdata,  --Counter value from FPGA logic for dynamically loadable tap value.
-    up_drdata    => a0_drdata,  --Counter value going to FPGA logic for monitoring tap value.
-    delay_clk    => clk_dly,            --clk_200M
-    delay_rst    => not rst_n,
-    bitslip => bitslip,
-    delay_locked => a0_delay_locked     --output flag
-    );
+  -- Inst_a_d0_serdes_in : ad_serdes_in port map(
+  --   rst          => not rst_n,
+  --   clk          => clk,
+  --   div_clk      => div_clk,
+  --   data_s0      => a_d0_s0,
+  --   data_s1      => a_d0_s1,
+  --   data_s2      => a_d0_s2,
+  --   data_s3      => a_d0_s3,
+  --   data_s4      => a_d0_s4,
+  --   data_s5      => a_d0_s5,
+  --   data_s6      => a_d0_s6,
+  --   data_s7      => a_d0_s7,
+  --   data_in_p    => a_d0_p,
+  --   data_in_n    => a_d0_n,
+  --   up_clk       => clk_dly,
+  --   up_dld       => up_dld,  --Loads the IDELAYE2 primitive to the pre-programmed value
+  --   up_dwdata    => a0_dwdata,  --Counter value from FPGA logic for dynamically loadable tap value.
+  --   up_drdata    => a0_drdata,  --Counter value going to FPGA logic for monitoring tap value.
+  --   delay_clk    => clk_dly,            --clk_200M
+  --   delay_rst    => not rst_n,
+  --   bitslip => bitslip,
+  --   delay_locked => a0_delay_locked     --output flag
+  --   );
 
-  Inst_a_d1_serdes_in : ad_serdes_in port map(
-    rst          => not rst_n,
-    clk          => clk,
-    div_clk      => div_clk,
-    data_s0      => a_d1_s0,
-    data_s1      => a_d1_s1,
-    data_s2      => a_d1_s2,
-    data_s3      => a_d1_s3,
-    data_s4      => a_d1_s4,
-    data_s5      => a_d1_s5,
-    data_s6      => a_d1_s6,
-    data_s7      => a_d1_s7,
-    data_in_p    => a_d1_p,
-    data_in_n    => a_d1_n,
-    up_clk       => clk_dly,
-    up_dld       => up_dld,  --Loads the IDELAYE2 primitive to the pre-programmed value
-    up_dwdata    => a1_dwdata,  --Counter value from FPGA logic for dynamically loadable tap value.
-    up_drdata    => a1_drdata,  --Counter value going to FPGA logic for monitoring tap value.
-    delay_clk    => clk_dly,            --clk_200M
-    delay_rst    => not rst_n,
-    bitslip =>bitslip,
-    delay_locked => a1_delay_locked     --output flag
-    );
+  -- Inst_a_d1_serdes_in : ad_serdes_in port map(
+  --   rst          => not rst_n,
+  --   clk          => clk,
+  --   div_clk      => div_clk,
+  --   data_s0      => a_d1_s0,
+  --   data_s1      => a_d1_s1,
+  --   data_s2      => a_d1_s2,
+  --   data_s3      => a_d1_s3,
+  --   data_s4      => a_d1_s4,
+  --   data_s5      => a_d1_s5,
+  --   data_s6      => a_d1_s6,
+  --   data_s7      => a_d1_s7,
+  --   data_in_p    => a_d1_p,
+  --   data_in_n    => a_d1_n,
+  --   up_clk       => clk_dly,
+  --   up_dld       => up_dld,  --Loads the IDELAYE2 primitive to the pre-programmed value
+  --   up_dwdata    => a1_dwdata,  --Counter value from FPGA logic for dynamically loadable tap value.
+  --   up_drdata    => a1_drdata,  --Counter value going to FPGA logic for monitoring tap value.
+  --   delay_clk    => clk_dly,            --clk_200M
+  --   delay_rst    => not rst_n,
+  --   bitslip =>bitslip,
+  --   delay_locked => a1_delay_locked     --output flag
+  --   );
 
   --Note: The first sample in time will be data_s7, the last data_s0!
+  iserdes_1 : entity work.iserdes
+    port map (
+      rst          => not rst_n,
+      clk          => clk,
+      -- clkB         => clkB,
+      div_clk      => div_clk,
+      data_in0_p   => a_d0_p,
+      data_in0_n   => a_d0_n,
+      data_in1_p   => a_d1_p,
+      data_in1_n   => a_d1_n,
+      BITSLIP_low  => '0',
+      BITSLIP_high => '0',
+      data_combine => data_A);
 
 end Behavioral;
