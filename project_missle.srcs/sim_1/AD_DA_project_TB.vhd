@@ -39,40 +39,50 @@ end AD_DA_project_TB;
 
 architecture Behavioral of AD_DA_project_TB is
 
-  component AD_DA_project is
-    port (
-      user_pushbutton_g : in std_logic;
-      osc_in_p : in std_logic;
-      osc_in_n : in std_logic;
-      dco_p    : in std_logic;
-      dco_n    : in std_logic;
-      fco_p    : in std_logic;
-      fco_n    : in std_logic;
-      bitslip : in std_logic;
-      a_d0_p   : in std_logic_vector(0 downto 0);
-      a_d0_n   : in std_logic_vector(0 downto 0);
-      a_d1_p   : in std_logic_vector(0 downto 0);
-      a_d1_n   : in std_logic_vector(0 downto 0));
-  end component AD_DA_project;
+component AD_DA_project is
+  port (
+    user_pushbutton_g : in  std_logic;
+    osc_in_p          : in  std_logic;
+    osc_in_n          : in  std_logic;
+    dco_p             : in  std_logic;
+    dco_n             : in  std_logic;
+    fco_p             : in  std_logic;
+    fco_n             : in  std_logic;
+    a_d0_p            : in  std_logic;
+    a_d0_n            : in  std_logic;
+    a_d1_p            : in  std_logic;
+    a_d1_n            : in  std_logic;
+    Q_p               : out std_logic_vector(15 downto 0);
+    Q_n               : out std_logic_vector(15 downto 0);
+    frame_p           : out std_logic;
+    frame_n           : out std_logic;
+    SYNC_p            : out std_logic;
+    SYNC_n            : out std_logic;
+    DataCLk_p         : out std_logic;
+    DataCLk_n         : out std_logic;
+    SDIO              : out std_logic;
+    SCLK              : out std_logic;
+    SDENB             : out std_logic);
+end component AD_DA_project;
   
-    component OSERDES_CORE is
-    port (
-      rst : in std_logic;
-      serial_data : out std_logic;
-      serial_clk : in std_logic;
-      parallel_clk : in std_logic;
-      parallel_data   : in std_logic_vector(7 downto 0)
-    );
-  end component OSERDES_CORE;
+  --   component OSERDES_CORE is
+  --   port (
+  --     rst : in std_logic;
+  --     serial_data : out std_logic;
+  --     serial_clk : in std_logic;
+  --     parallel_clk : in std_logic;
+  --     parallel_data   : in std_logic_vector(7 downto 0)
+  --   );
+  -- end component OSERDES_CORE;
   constant OSC_in_period : time := 4 ns;
   constant dco_period : time := 2 ns;
   constant fco_period : time := 8 ns;
   constant clk_1g_period : time := 1 ns;
   signal parallel_data : std_logic_vector(15 downto 0);
-  signal a_d0_p : std_logic_vector(0 downto 0);
-  signal a_d0_n : std_logic_vector(0 downto 0);
-  signal a_d1_p : std_logic_vector(0 downto 0);
-  signal a_d1_n : std_logic_vector(0 downto 0);
+  signal a_d0_p : std_logic;
+  signal a_d0_n : std_logic;
+  signal a_d1_p : std_logic;
+  signal a_d1_n : std_logic;
   signal OSC_in_p : std_logic;
   signal OSC_in_n : std_logic;
   -- signal serial_data_0 : std_logic := 0;
@@ -85,38 +95,59 @@ architecture Behavioral of AD_DA_project_TB is
   signal rst_n : std_logic;
   signal user_pushbutton_g : std_logic ;
   signal bitslip : std_logic;
+  signal Q_p : std_logic_vector(15 downto 0);
+signal Q_n : std_logic_vector(15 downto 0);
+signal frame_p : std_logic;
+signal frame_n : std_logic;
+signal sync_p : std_logic;
+signal SYNC_n : std_logic;
+signal DataCLk_p : std_logic;
+signal DataCLk_n : std_logic;
+signal SDIO : std_logic;
+signal SCLK : std_logic;
+signal SDENB : std_logic;
 begin
 
-   OSERDES_CORE_inst1 :OSERDES_CORE
-    port map (
-      rst => not user_pushbutton_g,
-      serial_clk => dco_p,
-      parallel_clk => fco_p,
-      parallel_data => parallel_data(7 downto 0),
-      serial_data => a_d0_p(0)
-    );
-     OSERDES_CORE_inst2 :OSERDES_CORE
-       port map (
-         rst => not user_pushbutton_g,
-         serial_clk => dco_p,
-         parallel_clk => fco_p,
-         parallel_data => parallel_data(15 downto 8),
-         serial_data => a_d1_p(0)
-       );
-  AD_DA_project_inst :AD_DA_project
-    port map (
-      user_pushbutton_g => user_pushbutton_g,
-      osc_in_p => osc_in_p,
-      osc_in_n => osc_in_n,
-      dco_p    => dco_p,
-      dco_n    => dco_n,
-      fco_p    => fco_p,
-      fco_n    => fco_n,
-      bitslip => bitslip,
-      a_d0_p   => a_d0_p,
-      a_d0_n   => a_d0_n,
-      a_d1_p   => a_d1_p,
-      a_d1_n   => a_d1_n);
+   -- OSERDES_CORE_inst1 :OSERDES_CORE
+   --  port map (
+   --    rst => not user_pushbutton_g,
+   --    serial_clk => dco_p,
+   --    parallel_clk => fco_p,
+   --    parallel_data => parallel_data(7 downto 0),
+   --    serial_data => a_d0_p(0)
+   --  );
+   --   OSERDES_CORE_inst2 :OSERDES_CORE
+   --     port map (
+   --       rst => not user_pushbutton_g,
+   --       serial_clk => dco_p,
+   --       parallel_clk => fco_p,
+   --       parallel_data => parallel_data(15 downto 8),
+   --       serial_data => a_d1_p(0)
+   --     );
+AD_DA_project_1: entity work.AD_DA_project
+  port map (
+    user_pushbutton_g => user_pushbutton_g,
+    osc_in_p          => osc_in_p,
+    osc_in_n          => osc_in_n,
+    dco_p             => dco_p,
+    dco_n             => dco_n,
+    fco_p             => fco_p,
+    fco_n             => fco_n,
+    a_d0_p            => a_d0_p,
+    a_d0_n            => a_d0_n,
+    a_d1_p            => a_d1_p,
+    a_d1_n            => a_d1_n,
+    Q_p               => Q_p,
+    Q_n               => Q_n,
+    frame_p           => frame_p,
+    frame_n           => frame_n,
+    SYNC_p            => SYNC_p,
+    SYNC_n            => SYNC_n,
+    DataCLk_p         => DataCLk_p,
+    DataCLk_n         => DataCLk_n,
+    SDIO              => SDIO,
+    SCLK              => SCLK,
+    SDENB             => SDENB);
 
   osc_ps : process
   begin
@@ -196,11 +227,11 @@ a_d1_n <= not a_d1_p;
   stim_proc : process
     begin
       bitslip <='0';
-      user_pushbutton_g <= '0';
+      user_pushbutton_g <= '1';
       wait for clk_1g_period*500;
       user_pushbutton_g<='1';
       wait for clk_1g_period*500;
-      user_pushbutton_g<='1';
+      user_pushbutton_g<='0';
       
       wait for clk_1g_period*1000;
       bitslip<='1';

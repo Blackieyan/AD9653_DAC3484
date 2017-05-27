@@ -6,7 +6,7 @@
 -- Author     :   <Blackie@BLACKIE-PC>
 -- Company    : 
 -- Created    : 2015-05-07
--- Last update: 2017-05-25
+-- Last update: 2017-05-26
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ architecture str of DAC_interface is
 
 begin  -- architecture str
 
-  DATAout_IOB_1 : entity work.DATAout_IOB
+  DATAout_IOB_1 : DATAout_IOB
     port map (
       rst_n     => rst_n,
       CLK       => CLK,
@@ -151,9 +151,17 @@ begin  -- architecture str
   begin  -- process Data_B_cnt_ps
     if rst_n = '0' then                 -- asynchronous reset (active low)
       Data_B_inter <= (others => '0');
+            Data_C_inter <= (others => '0');
+            Data_D_inter <= (others => '0');
     elsif clk_div'event and clk_div = '1' then  -- rising clock edge
       if data_en = '1' then
-        Data_B_inter <= (Data_B_inter(15 downto 8)+1)&x"00";
+        -- Data_B_inter <= (Data_B_inter(15 downto 8)+1)&x"00";
+        -- Data_C_inter <= (Data_C_inter(15 downto 8)+2)&x"00";
+        -- Data_D_inter <= (Data_D_inter(15 downto 8)+4)&x"00";
+        
+        Data_B_inter <=(others => '0');
+        Data_C_inter <=(others => '0');
+        Data_D_inter <=(others => '0');
       -- Data_B <= ram_dout;
       end if;
     end if;

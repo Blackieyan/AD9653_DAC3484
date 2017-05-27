@@ -87,10 +87,10 @@ module serdes_out (
     .TRISTATE_WIDTH (1),
     .SERDES_MODE ("MASTER"))
   i_serdes (
-    .D1 (data_s0[l_inst]),
-    .D2 (data_s1[l_inst]),
-    .D3 (data_s2[l_inst]),
-    .D4 (data_s3[l_inst]),
+    .D1 (1),//data_s0[l_inst]),
+    .D2 (1),//data_s1[l_inst]),
+    .D3 (0),//data_s2[l_inst]),
+    .D4 (0),//data_s3[l_inst]),
     .D5 (1'b0),
     .D6 (1'b0),
     .D7 (1'b0),

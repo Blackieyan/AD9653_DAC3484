@@ -28,8 +28,8 @@ use IEEE.STD_LOGIC_1164.all;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+library UNISIM;
+use UNISIM.VComponents.all;
 
 entity AD_DA_project is
   port (
@@ -233,7 +233,17 @@ begin
       CLK_200M          => CLK_200M,
       CLK_250M          => CLK_250M);
 
-  rst_n <= (not user_pushbutton_g) and lck_rst_n;
+
+  rst_n_ps: process (user_pushbutton_g, lck_rst_n) is
+  begin  -- process rst_n_ps
+      reg_rst_n <= (not user_pushbutton_g) and lck_rst_n;
+  end process rst_n_ps;
+
+     BUFG_inst : BUFG
+   port map (
+      O => rst_n, -- 1-bit output: Clock output
+      I => reg_rst_n  -- 1-bit input: Clock input
+   );
 
   ---------------------------------------------------------------------------
   ---------------------------------------------------------------------------

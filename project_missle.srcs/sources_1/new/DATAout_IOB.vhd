@@ -20,7 +20,11 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_UNSIGNED.all;
+use IEEE.std_logic_arith.all;
+library UNISIM;
+use UNISIM.VCOMPONENTS.all;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,22 +36,25 @@ use IEEE.STD_LOGIC_1164.all;
 --use UNISIM.VComponents.all;
 
 entity DATAout_IOB is
+  generic(
+    dac_resolution : integer :=16
+    );
   port (
     rst_n : in std_logic;
     CLK       : in  std_logic; -- clk 500MHz 0degree
     CLK_div : in std_logic;    --clk 250MHz
-    Q_p       : out std_logic_vector(15 downto 0);
-    Q_n       : out std_logic_vector(15 downto 0);
+    Q_p       : out std_logic_vector(dac_resolution-1 downto 0);
+    Q_n       : out std_logic_vector(dac_resolution-1 downto 0);
     frame_p   : out std_logic;
     frame_n   : out std_logic;
     SYNC_p    : out std_logic;
     SYNC_n    : out std_logic;
     DataCLk_p : out std_logic;
     DataCLk_n : out std_logic;
-    Data_A    : in  std_logic_vector(15 downto 0);
-    Data_B    : in  std_logic_vector(15 downto 0);
-    Data_C    : in  std_logic_vector(15 downto 0);
-    Data_D    : in  std_logic_vector(15 downto 0);
+    Data_A    : in  std_logic_vector(dac_resolution-1 downto 0);
+    Data_B    : in  std_logic_vector(dac_resolution-1 downto 0);
+    Data_C    : in  std_logic_vector(dac_resolution-1 downto 0);
+    Data_D    : in  std_logic_vector(dac_resolution-1 downto 0);
     DataCLk   : in  std_logic           -- clk 500MHz 90degree shift
     );
 end DATAout_IOB;
@@ -55,14 +62,23 @@ end DATAout_IOB;
 architecture Behavioral of DATAout_IOB is
 signal sync : std_logic;
   signal Frame : std_logic;
-signal Q : std_logic_vector(15 downto 0);
+signal data_A_d2 : std_logic_vector(dac_resolution-1 downto 0);
+signal data_B_d2 : std_logic_vector(dac_resolution-1 downto 0);
+signal data_C_d2 : std_logic_vector(dac_resolution-1 downto 0);
+signal data_D_d2 : std_logic_vector(dac_resolution-1 downto 0);
+signal data_A_d : std_logic_vector(dac_resolution-1 downto 0);
+signal data_B_d : std_logic_vector(dac_resolution-1 downto 0);
+signal data_C_d : std_logic_vector(dac_resolution-1 downto 0);
+signal data_D_d : std_logic_vector(dac_resolution-1 downto 0);
+
+signal Q : std_logic_vector(dac_resolution-1 downto 0);
   -- component ODDR_module
   --   port(
   --     CLK : in  std_logic;
-  --     D0   : in  std_logic_vector(15 downto 0);
-  --     D1   : in  std_logic_vector(15 downto 0);
+  --     D0   : in  std_logic_vector(dac_resolution-1 downto 0);
+  --     D1   : in  std_logic_vector(dac_resolution-1 downto 0);
   --     valid : in std_logic;
-  --     Q    : out std_logic_vector(15 downto 0);
+  --     Q    : out std_logic_vector(dac_resolution-1 downto 0);
   --     frame : out std_logic;
   --     sync : out std_logic
   --     );
@@ -74,19 +90,19 @@ signal Q : std_logic_vector(15 downto 0);
       div_clk  : in  std_logic;
       Frame    : out std_logic;
       sync     : out std_logic;
-      data_s0  : in  std_logic_vector(15 downto 0);
-      data_s1  : in  std_logic_vector(15 downto 0);
-      data_s2  : in  std_logic_vector(15 downto 0);
-      data_s3  : in  std_logic_vector(15 downto 0);
-      data_out : out std_logic_vector(15 downto 0)
+      data_s0  : in  std_logic_vector(dac_resolution-1 downto 0);
+      data_s1  : in  std_logic_vector(dac_resolution-1 downto 0);
+      data_s2  : in  std_logic_vector(dac_resolution-1 downto 0);
+      data_s3  : in  std_logic_vector(dac_resolution-1 downto 0);
+      data_out : out std_logic_vector(dac_resolution-1 downto 0)
       );
   end component;
 
   component OBUFDS_module is
     port (
-      Q_p       : out std_logic_vector(15 downto 0);
-      Q_n       : out std_logic_vector(15 downto 0);
-      Q         : in  std_logic_vector(15 downto 0);
+      Q_p       : out std_logic_vector(dac_resolution-1 downto 0);
+      Q_n       : out std_logic_vector(dac_resolution-1 downto 0);
+      Q         : in  std_logic_vector(dac_resolution-1 downto 0);
       frame_p   : out std_logic;
       frame_n   : out std_logic;
       frame     : in  std_logic;
@@ -100,7 +116,20 @@ signal Q : std_logic_vector(15 downto 0);
   -----------------------------------------------------------------------------
 
 begin
-
+ data_A_d_ps: process (clk_div) is
+ begin  -- process data_A_d
+   if clk_div'event and clk_div = '1' then   -- rising clock edge
+          data_A_d <= data_A;
+     data_B_d <= data_B;
+     data_C_d <= data_C;
+     data_D_d <= data_D;
+     data_A_d2 <= data_A_d;
+     data_B_d2 <= data_B_d;
+     data_C_d2 <= data_C_d;
+     data_D_d2 <= data_D_d;
+   end if;
+ end process data_A_d_ps;
+ 
   -- ODDR_signals_inst : ODDR_module
   --   port map(
   --     CLK => CLK,
@@ -110,15 +139,64 @@ begin
   --     frame => frame,
   --     Q    => Q
   --     );
+  --------------------------------------------------------------------------
+
+  -- DATA_d_inst_gen : for i in 0 to 15 generate
+  -- begin
+  --    FDCE_A_inst : FDCE
+  --  generic map (
+  --     INIT => '0') -- Initial value of register ('0' or '1')  
+  --  port map (
+  --     Q => data_A_d(i),      -- Data output
+  --     C => clk_div,      -- Clock input
+  --     CE => '1',    -- Clock enable input
+  --     CLR => not rst_n,  -- Asynchronous clear input
+  --     D => data_A(i)       -- Data input
+  --  );
+
+  --         FDCE_B_inst : FDCE
+  --  generic map (
+  --     INIT => '0') -- Initial value of register ('0' or '1')  
+  --  port map (
+  --     Q => data_B_d(i),      -- Data output
+  --     C => clk_div,      -- Clock input
+  --     CE => '1',    -- Clock enable input
+  --     CLR => not rst_n,  -- Asynchronous clear input
+  --     D => data_B(i)       -- Data input
+  --  );
+
+  --         FDCE_C_inst : FDCE
+  --  generic map (
+  --     INIT => '0') -- Initial value of register ('0' or '1')  
+  --  port map (
+  --     Q => data_C_d(i),      -- Data output
+  --     C => clk_div,      -- Clock input
+  --     CE => '1',    -- Clock enable input
+  --     CLR => not rst_n,  -- Asynchronous clear input
+  --     D => data_C(i)       -- Data input
+  --  );
+
+  --         FDCE_D_inst : FDCE
+  --  generic map (
+  --     INIT => '0') -- Initial value of register ('0' or '1')  
+  --  port map (
+  --     Q => data_D_d(i),      -- Data output
+  --     C => clk_div,      -- Clock input
+  --     CE => '1',    -- Clock enable input
+  --     CLR => not rst_n,  -- Asynchronous clear input
+  --     D => data_D(i)       -- Data input
+  --  );
+  -- end generate;
+  -----------------------------------------------------------------------------
   serdes_out_core : serdes_out
     port map(
       rst      => not rst_n,
       clk      => clk,
       div_clk  => clk_div,
-      data_s0  => data_A,
-      data_s1  => data_B,
-      data_s2  => data_C,
-      data_s3  => data_D,
+      data_s0  => data_A_d2,
+      data_s1  => data_B_d2,
+      data_s2  => data_C_d2,
+      data_s3  => data_D_d2,
       Frame    => Frame,
       sync     => sync,
       data_out => Q
