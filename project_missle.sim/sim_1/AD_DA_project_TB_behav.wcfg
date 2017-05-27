@@ -10,228 +10,107 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="53" />
+   <WVObjectSize size="148" />
    <wave_markers>
       <marker time="1019843000" label="" />
+      <marker time="1569680000" label="" />
+      <marker time="1433830000" label="" />
+      <marker time="1027758000" label="" />
+      <marker time="1034218000" label="" />
+      <marker time="2083827000" label="" />
+      <marker time="2147483647" label="" />
    </wave_markers>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/parallel_data" type="array">
-      <obj_property name="ElementShortName">parallel_data[15:0]</obj_property>
-      <obj_property name="ObjectShortName">parallel_data[15:0]</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/Q_n" type="array">
+      <obj_property name="ElementShortName">Q_n[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_n[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d0_p" type="logic">
-      <obj_property name="ElementShortName">a_d0_p</obj_property>
-      <obj_property name="ObjectShortName">a_d0_p</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DataCLk_p" type="logic">
+      <obj_property name="ElementShortName">DataCLk_p</obj_property>
+      <obj_property name="ObjectShortName">DataCLk_p</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d0_n" type="logic">
-      <obj_property name="ElementShortName">a_d0_n</obj_property>
-      <obj_property name="ObjectShortName">a_d0_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d1_p" type="logic">
-      <obj_property name="ElementShortName">a_d1_p</obj_property>
-      <obj_property name="ObjectShortName">a_d1_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/a_d1_n" type="logic">
-      <obj_property name="ElementShortName">a_d1_n</obj_property>
-      <obj_property name="ObjectShortName">a_d1_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_p" type="logic">
-      <obj_property name="ElementShortName">OSC_in_p</obj_property>
-      <obj_property name="ObjectShortName">OSC_in_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_n" type="logic">
-      <obj_property name="ElementShortName">OSC_in_n</obj_property>
-      <obj_property name="ObjectShortName">OSC_in_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/DCO_p" type="logic">
-      <obj_property name="ElementShortName">DCO_p</obj_property>
-      <obj_property name="ObjectShortName">DCO_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/DCO_n" type="logic">
-      <obj_property name="ElementShortName">DCO_n</obj_property>
-      <obj_property name="ObjectShortName">DCO_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fCO_p" type="logic">
-      <obj_property name="ElementShortName">fCO_p</obj_property>
-      <obj_property name="ObjectShortName">fCO_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/clk_1g" type="logic">
-      <obj_property name="ElementShortName">clk_1g</obj_property>
-      <obj_property name="ObjectShortName">clk_1g</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/rst_n" type="logic">
-      <obj_property name="ElementShortName">rst_n</obj_property>
-      <obj_property name="ObjectShortName">rst_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/user_pushbutton_g" type="logic">
-      <obj_property name="ElementShortName">user_pushbutton_g</obj_property>
-      <obj_property name="ObjectShortName">user_pushbutton_g</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/OSC_in_period" type="other">
-      <obj_property name="ElementShortName">OSC_in_period</obj_property>
-      <obj_property name="ObjectShortName">OSC_in_period</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/Q_p" type="array">
+      <obj_property name="ElementShortName">Q_p[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_p[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/dco_period" type="other">
-      <obj_property name="ElementShortName">dco_period</obj_property>
-      <obj_property name="ObjectShortName">dco_period</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/frame_p" type="logic">
+      <obj_property name="ElementShortName">frame_p</obj_property>
+      <obj_property name="ObjectShortName">frame_p</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fco_period" type="other">
-      <obj_property name="ElementShortName">fco_period</obj_property>
-      <obj_property name="ObjectShortName">fco_period</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/SYNC_p" type="logic">
+      <obj_property name="ElementShortName">SYNC_p</obj_property>
+      <obj_property name="ObjectShortName">SYNC_p</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/clk_1g_period" type="other">
-      <obj_property name="ElementShortName">clk_1g_period</obj_property>
-      <obj_property name="ObjectShortName">clk_1g_period</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/frame_n" type="logic">
+      <obj_property name="ElementShortName">frame_n</obj_property>
+      <obj_property name="ObjectShortName">frame_n</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/fCO_n" type="logic">
-      <obj_property name="ElementShortName">fCO_n</obj_property>
-      <obj_property name="ObjectShortName">fCO_n</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DataCLk_n" type="logic">
+      <obj_property name="ElementShortName">DataCLk_n</obj_property>
+      <obj_property name="ObjectShortName">DataCLk_n</obj_property>
    </wvobject>
-   <wvobject type="divider" fp_name="divider296">
-      <obj_property name="label">New Divider 36</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/Frame_int" type="logic">
+      <obj_property name="ElementShortName">Frame_int</obj_property>
+      <obj_property name="ObjectShortName">Frame_int</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/SYNC_n" type="logic">
+      <obj_property name="ElementShortName">SYNC_n</obj_property>
+      <obj_property name="ObjectShortName">SYNC_n</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider200">
+      <obj_property name="label">New Divider 1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject type="divider" fp_name="divider76">
-      <obj_property name="label">New Divider 37</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/Frame" type="logic">
+      <obj_property name="ElementShortName">Frame</obj_property>
+      <obj_property name="ObjectShortName">Frame</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/Q_delay_tap" type="array">
+      <obj_property name="ElementShortName">Q_delay_tap[79:0]</obj_property>
+      <obj_property name="ObjectShortName">Q_delay_tap[79:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/bitslip" type="logic">
-      <obj_property name="ElementShortName">bitslip</obj_property>
-      <obj_property name="ObjectShortName">bitslip</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/sync_int" type="logic">
+      <obj_property name="ElementShortName">sync_int</obj_property>
+      <obj_property name="ObjectShortName">sync_int</obj_property>
    </wvobject>
-   <wvobject type="divider" fp_name="divider77">
-      <obj_property name="label">New Divider 38</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/sync" type="logic">
+      <obj_property name="ElementShortName">sync</obj_property>
+      <obj_property name="ObjectShortName">sync</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/clk_dly" type="logic">
+      <obj_property name="ElementShortName">clk_dly</obj_property>
+      <obj_property name="ObjectShortName">clk_dly</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/rst_n" type="logic">
-      <obj_property name="ElementShortName">rst_n</obj_property>
-      <obj_property name="ObjectShortName">rst_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/CLK" type="logic">
-      <obj_property name="ElementShortName">CLK</obj_property>
-      <obj_property name="ObjectShortName">CLK</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/CLK_div" type="logic">
-      <obj_property name="ElementShortName">CLK_div</obj_property>
-      <obj_property name="ObjectShortName">CLK_div</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_out_s" type="array">
+      <obj_property name="ElementShortName">data_out_s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_s[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_s0" type="array">
       <obj_property name="ElementShortName">data_s0[15:0]</obj_property>
       <obj_property name="ObjectShortName">data_s0[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/div_clk" type="logic">
-      <obj_property name="ElementShortName">div_clk</obj_property>
-      <obj_property name="ObjectShortName">div_clk</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Q_p" type="array">
-      <obj_property name="ElementShortName">Q_p[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Q_p[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Q_n" type="array">
-      <obj_property name="ElementShortName">Q_n[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Q_n[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/frame_p" type="logic">
-      <obj_property name="ElementShortName">frame_p</obj_property>
-      <obj_property name="ObjectShortName">frame_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/frame_n" type="logic">
-      <obj_property name="ElementShortName">frame_n</obj_property>
-      <obj_property name="ObjectShortName">frame_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/SYNC_p" type="logic">
-      <obj_property name="ElementShortName">SYNC_p</obj_property>
-      <obj_property name="ObjectShortName">SYNC_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/SYNC_n" type="logic">
-      <obj_property name="ElementShortName">SYNC_n</obj_property>
-      <obj_property name="ObjectShortName">SYNC_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DataCLk_p" type="logic">
-      <obj_property name="ElementShortName">DataCLk_p</obj_property>
-      <obj_property name="ObjectShortName">DataCLk_p</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DataCLk_n" type="logic">
-      <obj_property name="ElementShortName">DataCLk_n</obj_property>
-      <obj_property name="ObjectShortName">DataCLk_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Data_A" type="array">
-      <obj_property name="ElementShortName">Data_A[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_A[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Data_B" type="array">
-      <obj_property name="ElementShortName">Data_B[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_B[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Data_C" type="array">
-      <obj_property name="ElementShortName">Data_C[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_C[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/Data_D" type="array">
-      <obj_property name="ElementShortName">Data_D[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_D[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DataCLk" type="logic">
-      <obj_property name="ElementShortName">DataCLk</obj_property>
-      <obj_property name="ObjectShortName">DataCLk</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/rst" type="logic">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/crg_dcms_inst/lck_rst_n" type="logic">
-      <obj_property name="ElementShortName">lck_rst_n</obj_property>
-      <obj_property name="ObjectShortName">lck_rst_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/crg_dcms_inst/locked" type="logic">
-      <obj_property name="ElementShortName">locked</obj_property>
-      <obj_property name="ObjectShortName">locked</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/crg_dcms_inst/rst_int" type="logic">
-      <obj_property name="ElementShortName">rst_int</obj_property>
-      <obj_property name="ObjectShortName">rst_int</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/crg_dcms_inst/rst_int_i_1_n_0" type="logic">
-      <obj_property name="ElementShortName">rst_int_i_1_n_0</obj_property>
-      <obj_property name="ObjectShortName">rst_int_i_1_n_0</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/crg_dcms_inst/user_pushbutton_g" type="logic">
-      <obj_property name="ElementShortName">user_pushbutton_g</obj_property>
-      <obj_property name="ObjectShortName">user_pushbutton_g</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/rst_n" type="logic">
-      <obj_property name="ElementShortName">rst_n</obj_property>
-      <obj_property name="ObjectShortName">rst_n</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/user_pushbutton_g" type="logic">
-      <obj_property name="ElementShortName">user_pushbutton_g</obj_property>
-      <obj_property name="ObjectShortName">user_pushbutton_g</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/lck_rst_n" type="logic">
-      <obj_property name="ElementShortName">lck_rst_n</obj_property>
-      <obj_property name="ObjectShortName">lck_rst_n</obj_property>
-   </wvobject>
    <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_s1" type="array">
       <obj_property name="ElementShortName">data_s1[15:0]</obj_property>
       <obj_property name="ObjectShortName">data_s1[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_s2" type="array">
+      <obj_property name="ElementShortName">data_s2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_s2[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_s3" type="array">
@@ -239,9 +118,524 @@
       <obj_property name="ObjectShortName">data_s3[15:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/data_s2" type="array">
-      <obj_property name="ElementShortName">data_s2[15:0]</obj_property>
-      <obj_property name="ObjectShortName">data_s2[15:0]</obj_property>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/div_clk" type="logic">
+      <obj_property name="ElementShortName">div_clk</obj_property>
+      <obj_property name="ObjectShortName">div_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[0].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[0].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[0].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[0].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[10].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[10].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[10].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[10].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[11].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[11].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[11].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[11].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[12].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[12].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[12].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[12].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[13].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[13].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[13].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[13].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[14].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[14].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[14].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[14].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[15].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[15].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[15].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[15].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[1].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[1].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[1].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[1].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[2].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[2].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[2].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[2].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[3].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[3].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[3].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[3].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[4].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[4].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[4].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[4].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[5].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[5].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[5].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[5].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[6].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[6].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[6].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[6].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[7].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[7].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[7].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[7].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[8].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[8].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[8].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[8].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED " type="array">
+      <obj_property name="ElementShortName">\NLW_g_data[9].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].ODELAYE2_inst_CNTVALUEOUT_UNCONNECTED [4:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_OFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_OFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_OFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_SHIFTOUT1_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_SHIFTOUT1_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_SHIFTOUT2_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_SHIFTOUT2_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_TBYTEOUT_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_TBYTEOUT_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_TFB_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_TFB_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_TFB_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/\NLW_g_data[9].i_serdes_TQ_UNCONNECTED " type="logic">
+      <obj_property name="ElementShortName">\NLW_g_data[9].i_serdes_TQ_UNCONNECTED </obj_property>
+      <obj_property name="ObjectShortName">\NLW_g_data[9].i_serdes_TQ_UNCONNECTED </obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_OFB_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_OFB_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_OFB_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_SHIFTOUT1_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_SHIFTOUT1_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_SHIFTOUT1_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_SHIFTOUT2_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_SHIFTOUT2_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_SHIFTOUT2_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_TBYTEOUT_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_TBYTEOUT_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_TBYTEOUT_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_TFB_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_TFB_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_TFB_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_f_TQ_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_f_TQ_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_f_TQ_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_OFB_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_OFB_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_OFB_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_SHIFTOUT1_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_SHIFTOUT1_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_SHIFTOUT1_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_SHIFTOUT2_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_SHIFTOUT2_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_SHIFTOUT2_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_TBYTEOUT_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_TBYTEOUT_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_TBYTEOUT_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_TFB_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_TFB_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_TFB_UNCONNECTED</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/AD_DA_project_TB/AD_DA_project_1/DAC_interface_inst/DATAout_IOB_1/serdes_out_core/NLW_i_serdes_s_TQ_UNCONNECTED" type="logic">
+      <obj_property name="ElementShortName">NLW_i_serdes_s_TQ_UNCONNECTED</obj_property>
+      <obj_property name="ObjectShortName">NLW_i_serdes_s_TQ_UNCONNECTED</obj_property>
    </wvobject>
 </wave_config>

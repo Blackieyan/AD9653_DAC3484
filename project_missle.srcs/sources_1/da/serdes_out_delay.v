@@ -16,8 +16,8 @@ clk_dly,
   data_s2,
   data_s3,
   Frame,
-		   sync,
-		   Q_delay_tap,
+    sync,
+    Q_delay_tap,
 //  Frame_n,
 //  data_out_p,
   data_out
@@ -28,7 +28,7 @@ clk_dly,
   parameter   DEVICE_TYPE = 0;
   parameter   SERDES = 1;
   parameter   DATA_WIDTH = 16;
-  parameter   IODELAY_GROUP   = "DAC_ODELAY_GROUP";
+  parameter   IODELAY_GROUP   = "IODELAY_GROUP";
 
   localparam  DEVICE_6SERIES = 1;
   localparam  DEVICE_7SERIES = 0;
@@ -61,20 +61,18 @@ clk_dly,
   wire    [DW:0]  serdes_shift1_s;
   wire    [DW:0]  serdes_shift2_s;
 
+   wire 	  Frame_int;
+   wire 	  sync_int;
+   
   // instantiations
-
+/* -----\/----- EXCLUDED -----\/-----
+   (* IODELAY_GROUP = IODELAY_GROUP *)
+ -----/\----- EXCLUDED -----/\----- */
+   
   genvar l_inst;
   generate
   for (l_inst = 0; l_inst <= DW; l_inst = l_inst + 1) begin: g_data
-
-       (* IODELAY_GROUP = IODELAY_GROUP *)
-  IDELAYCTRL i_delay_ctrl (
-    .RST (rst),
-    .REFCLK (clk_dly),
-    .RDY ());
-     
-        (* IODELAY_GROUP = IODELAY_GROUP*) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-
+/* -----\/----- EXCLUDED -----\/-----
    ODELAYE2 #(
       .CINVCTRL_SEL("FALSE"),          // Enable dynamic clock inversion (FALSE, TRUE)
       .DELAY_SRC("ODATAIN"),           // Delay input (ODATAIN, CLKIN)
@@ -92,15 +90,16 @@ clk_dly,
       .CE(0),                   // 1-bit input: Active high enable increment/decrement input
       .CINVCTRL(0),       // 1-bit input: Dynamic clock inversion input
       .CLKIN(0),             // 1-bit input: Clock delay input
-      .CNTVALUEIN(Q_delay_tap[l_inst*5]),   // 5-bit input: Counter value input
+      .CNTVALUEIN(Q_delay_tap[l_inst*5+4:l_inst*5]),   // 5-bit input: Counter value input
       .INC(0),                 // 1-bit input: Increment / Decrement tap delay input
-      .LD(1),                   // 1-bit input: Loads ODELAY_VALUE tap delay in VARIABLE mode, in VAR_LOAD or
+      .LD(rst),                   // 1-bit input: Loads ODELAY_VALUE tap delay in VARIABLE mode, in VAR_LOAD or
                                  // VAR_LOAD_PIPE mode, loads the value of CNTVALUEIN
 
       .LDPIPEEN(0),       // 1-bit input: Enables the pipeline register to load data
       .ODATAIN(data_out_s[l_inst]),         // 1-bit input: Output delay data input
       .REGRST(rst)            // 1-bit input: Active-high reset tap-delay input
    );
+ -----/\----- EXCLUDED -----/\----- */
      
   if (SERDES == 0) begin
   ODDR #(
@@ -144,7 +143,7 @@ clk_dly,
     .OCE (1'b1),
     .CLK (clk),
     .CLKDIV (div_clk),
-    .OQ (data_out_s[l_inst]),
+    .OQ (data_out[l_inst]),
     .TQ (),
     .OFB (),
     .TFB (),
@@ -247,10 +246,10 @@ clk_dly,
     .TRISTATE_WIDTH (1),
     .SERDES_MODE ("MASTER"))
   i_serdes_f (
-    .D1 (1),
-    .D2 (1),
-    .D3 (0),
-    .D4 (0),
+    .D1 (0),
+    .D2 (0),
+    .D3 (1),
+    .D4 (1),
     .D5 (0),
     .D6 (0),
     .D7 (0),
@@ -283,10 +282,10 @@ clk_dly,
     .TRISTATE_WIDTH (1),
     .SERDES_MODE ("MASTER"))
   i_serdes_s(
-    .D1 (1),
-    .D2 (1),
-    .D3 (0),
-    .D4 (0),
+    .D1 (0),
+    .D2 (0),
+    .D3 (1),
+    .D4 (1),
     .D5 (0),
     .D6 (0),
     .D7 (0),
@@ -310,7 +309,61 @@ clk_dly,
     .TBYTEOUT (),
     .TCE (1'b0),
     .RST (rst));
-    
+     
+/* -----\/----- EXCLUDED -----\/-----
+   ODELAYE2 #(
+      .CINVCTRL_SEL("FALSE"),          // Enable dynamic clock inversion (FALSE, TRUE)
+      .DELAY_SRC("ODATAIN"),           // Delay input (ODATAIN, CLKIN)
+      .HIGH_PERFORMANCE_MODE("FALSE"), // Reduced jitter ("TRUE"), Reduced power ("FALSE")
+      .ODELAY_TYPE("VAR_LOAD"),           // FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
+      .ODELAY_VALUE(0),                // Output delay tap setting (0-31)
+      .PIPE_SEL("FALSE"),              // Select pipelined mode, FALSE, TRUE
+      .REFCLK_FREQUENCY(200.0),        // IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+      .SIGNAL_PATTERN("DATA")          // DATA, CLOCK input signal
+   )
+   ODELAYE2_frame_inst (
+      .CNTVALUEOUT(), // 5-bit output: Counter value output
+      .DATAOUT(Frame),         // 1-bit output: Delayed data/clock output
+      .C(clk_dly),                     // 1-bit input: Clock input
+      .CE(0),                   // 1-bit input: Active high enable increment/decrement input
+      .CINVCTRL(0),       // 1-bit input: Dynamic clock inversion input
+      .CLKIN(0),             // 1-bit input: Clock delay input
+      .CNTVALUEIN(8),   // 5-bit input: Counter value input
+      .INC(0),                 // 1-bit input: Increment / Decrement tap delay input
+      .LD(rst),                   // 1-bit input: Loads ODELAY_VALUE tap delay in VARIABLE mode, in VAR_LOAD or
+                                 // VAR_LOAD_PIPE mode, loads the value of CNTVALUEIN
+
+      .LDPIPEEN(0),       // 1-bit input: Enables the pipeline register to load data
+      .ODATAIN(Frame_int),         // 1-bit input: Output delay data input
+      .REGRST(rst)            // 1-bit input: Active-high reset tap-delay input
+   );
+   ODELAYE2 #(
+      .CINVCTRL_SEL("FALSE"),          // Enable dynamic clock inversion (FALSE, TRUE)
+      .DELAY_SRC("ODATAIN"),           // Delay input (ODATAIN, CLKIN)
+      .HIGH_PERFORMANCE_MODE("FALSE"), // Reduced jitter ("TRUE"), Reduced power ("FALSE")
+      .ODELAY_TYPE("VAR_LOAD"),           // FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
+      .ODELAY_VALUE(0),                // Output delay tap setting (0-31)
+      .PIPE_SEL("FALSE"),              // Select pipelined mode, FALSE, TRUE
+      .REFCLK_FREQUENCY(200.0),        // IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+      .SIGNAL_PATTERN("DATA")          // DATA, CLOCK input signal
+   )
+   ODELAYE2_sync_inst (
+      .CNTVALUEOUT(), // 5-bit output: Counter value output
+      .DATAOUT(sync),         // 1-bit output: Delayed data/clock output
+      .C(clk_dly),                     // 1-bit input: Clock input
+      .CE(0),                   // 1-bit input: Active high enable increment/decrement input
+      .CINVCTRL(0),       // 1-bit input: Dynamic clock inversion input
+      .CLKIN(0),             // 1-bit input: Clock delay input
+      .CNTVALUEIN(8),   // 5-bit input: Counter value input
+      .INC(0),                 // 1-bit input: Increment / Decrement tap delay input
+      .LD(rst),                   // 1-bit input: Loads ODELAY_VALUE tap delay in VARIABLE mode, in VAR_LOAD or
+                                 // VAR_LOAD_PIPE mode, loads the value of CNTVALUEIN
+
+      .LDPIPEEN(0),       // 1-bit input: Enables the pipeline register to load data
+      .ODATAIN(sync_int),         // 1-bit input: Output delay data input
+      .REGRST(rst)            // 1-bit input: Active-high reset tap-delay input
+   );    
+ -----/\----- EXCLUDED -----/\----- */
   end
 endmodule
 
