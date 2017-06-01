@@ -66,8 +66,8 @@ architecture Behavioral of crg_dcms is
   signal dco_ibuf        : std_logic;
   signal rst_int         : std_logic;
 
-  attribute IODELAY_GROUP                      : string;
-  attribute IODELAY_GROUP of dco_IDELAYE2_inst : label is "ADC_IDELAY_GROUP";
+  -- attribute IODELAY_GROUP                      : string;
+  -- attribute IODELAY_GROUP of dco_IDELAYE2_inst : label is "ADC_IDELAY_GROUP";
 
   component clk_wiz_0
     port
@@ -123,68 +123,69 @@ begin
 --  );
 
   -----------------------------------------------------------------------------
-  IBUFDS_inst : IBUFDS
+  IBUFDS_inst0 : IBUFDS
     generic map (
       DIFF_TERM    => true,             -- Differential Termination 
       IBUF_LOW_PWR => false,  -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
       IOSTANDARD   => "DEFAULT")
     port map (
-      O  => dco_ibuf,                   -- Buffer output
+      -- O  => dco_ibuf,                   -- Buffer output
+      O  => dco,
       I  => dco_p,  -- Diff_p buffer input (connect directly to top-level port)
       IB => dco_n   -- Diff_n buffer input (connect directly to top-level port)
       );
 
-  dco_IDELAYE2_inst : IDELAYE2
-    generic map (
-      CINVCTRL_SEL          => "FALSE",  -- Enable dynamic clock inversion (FALSE, TRUE)
-      DELAY_SRC             => "IDATAIN",   -- Delay input (IDATAIN, DATAIN)
-      HIGH_PERFORMANCE_MODE => "FALSE",  -- Reduced jitter ("TRUE"), Reduced power ("FALSE")
-      IDELAY_TYPE           => "VAR_LOAD",  -- FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
-      IDELAY_VALUE          => 0,       -- Input delay tap setting (0-31)
-      PIPE_SEL              => "FALSE",  -- Select pipelined mode, FALSE, TRUE
-      REFCLK_FREQUENCY      => 200.0,  -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
-      SIGNAL_PATTERN        => "DATA"   -- DATA, CLOCK input signal
-      )
-    port map (
-      CNTVALUEOUT => open,              -- 5-bit output: Counter value output
-      DATAOUT     => dco_idelay,        -- 1-bit output: Delayed data output
-      C           => CLK1,              -- 1-bit input: Clock input
-      CE          => '0',  -- 1-bit input: Active high enable increment/decrement input
-      CINVCTRL    => '0',  -- 1-bit input: Dynamic clock inversion input
-      CNTVALUEIN  => dco_delay_tap,     -- 5-bit input: Counter value input
-      DATAIN      => '0',  -- 1-bit input: Internal delay data input
-      IDATAIN     => dco_ibuf,          -- 1-bit input: Data input from the I/O
-      INC         => '0',  -- 1-bit input: Increment / Decrement tap delay input
-      LD          => '1',               -- 1-bit input: Load IDELAY_VALUE input
-      LDPIPEEN    => '0',  -- 1-bit input: Enable PIPELINE register to load data input
-      REGRST      => rst_int  -- 1-bit input: Active-high reset tap-delay input
-      );
+  -- dco_IDELAYE2_inst : IDELAYE2
+  --   generic map (
+  --     CINVCTRL_SEL          => "FALSE",  -- Enable dynamic clock inversion (FALSE, TRUE)
+  --     DELAY_SRC             => "IDATAIN",   -- Delay input (IDATAIN, DATAIN)
+  --     HIGH_PERFORMANCE_MODE => "FALSE",  -- Reduced jitter ("TRUE"), Reduced power ("FALSE")
+  --     IDELAY_TYPE           => "VAR_LOAD",  -- FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
+  --     IDELAY_VALUE          => 0,       -- Input delay tap setting (0-31)
+  --     PIPE_SEL              => "FALSE",  -- Select pipelined mode, FALSE, TRUE
+  --     REFCLK_FREQUENCY      => 200.0,  -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
+  --     SIGNAL_PATTERN        => "DATA"   -- DATA, CLOCK input signal
+  --     )
+  --   port map (
+  --     CNTVALUEOUT => open,              -- 5-bit output: Counter value output
+  --     DATAOUT     => dco_idelay,        -- 1-bit output: Delayed data output
+  --     C           => CLK1,              -- 1-bit input: Clock input
+  --     CE          => '0',  -- 1-bit input: Active high enable increment/decrement input
+  --     CINVCTRL    => '0',  -- 1-bit input: Dynamic clock inversion input
+  --     CNTVALUEIN  => dco_delay_tap,     -- 5-bit input: Counter value input
+  --     DATAIN      => '0',  -- 1-bit input: Internal delay data input
+  --     IDATAIN     => dco_ibuf,          -- 1-bit input: Data input from the I/O
+  --     INC         => '0',  -- 1-bit input: Increment / Decrement tap delay input
+  --     LD          => '1',               -- 1-bit input: Load IDELAY_VALUE input
+  --     LDPIPEEN    => '0',  -- 1-bit input: Enable PIPELINE register to load data input
+  --     REGRST      => rst_int  -- 1-bit input: Active-high reset tap-delay input
+  --     );
 
-  BUFR_inst : BUFR
-    generic map (
-      BUFR_DIVIDE => "4",       -- Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8" 
-      SIM_DEVICE  => "7SERIES"          -- Must be set to "7SERIES" 
-      )
-    port map (
-      O   => dco_div,                   -- 1-bit output: Clock output port
-      CE  => '1',  -- 1-bit input: Active high, clock enable (Divided modes only)
-      CLR => '0',  -- 1-bit input: Active high, asynchronous clear (Divided modes only)
-      I   => dco_idelay  -- 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
-      );
+  -- BUFR_inst : BUFR
+  --   generic map (
+  --     BUFR_DIVIDE => "4",       -- Values: "BYPASS, 1, 2, 3, 4, 5, 6, 7, 8" 
+  --     SIM_DEVICE  => "7SERIES"          -- Must be set to "7SERIES" 
+  --     )
+  --   port map (
+  --     O   => dco_div,                   -- 1-bit output: Clock output port
+  --     CE  => '1',  -- 1-bit input: Active high, clock enable (Divided modes only)
+  --     CLR => '0',  -- 1-bit input: Active high, asynchronous clear (Divided modes only)
+  --     I   => dco_idelay  -- 1-bit input: Clock buffer input driven by an IBUF, MMCM or local interconnect
+  --     );
 
-  BUFIO_inst : BUFIO
-    port map (
-      O => dco,  -- 1-bit output: Clock output (connect to I/O clock loads).
-      I => dco_idelay  -- 1-bit input: Clock input (connect to an IBUF or BUFMR).
-      );
+  -- BUFIO_inst : BUFIO
+  --   port map (
+  --     O => dco,  -- 1-bit output: Clock output (connect to I/O clock loads).
+  --     I => dco_idelay  -- 1-bit input: Clock input (connect to an IBUF or BUFMR).
+  --     );
 
 
-  IDELAYCTRL_inst : IDELAYCTRL
-    port map (
-      RDY    => open,                   -- 1-bit output: Ready output
-      REFCLK => CLK2,                   -- 1-bit input: Reference clock input
-      RST    => rst_int                 -- 1-bit input: Active high reset input
-      );
+  -- IDELAYCTRL_inst : IDELAYCTRL
+  --   port map (
+  --     RDY    => open,                   -- 1-bit output: Ready output
+  --     REFCLK => CLK2,                   -- 1-bit input: Reference clock input
+  --     RST    => rst_int                 -- 1-bit input: Active high reset input
+  --     );
 -------------------------------------------------------------------------------
   dcm_global : clk_wiz_1
     port map (
@@ -200,17 +201,30 @@ begin
       -- Status and control signals                
       locked    => dcm1_locked
       );
+-------------------------------------------------------------------------------
+  -- dcm_fco : clk_wiz_2
+  --   port map (
 
-  dcm_fco : clk_wiz_2
+  --     -- Clock in ports
+  --     clk_in1_p => fco_p,
+  --     clk_in1_n => fco_n,
+  --     -- Clock out ports  
+  --     clk_out1  => fco
+  --     );
+  
+  IBUFDS_inst1 : IBUFDS
+    generic map (
+      DIFF_TERM    => true,             -- Differential Termination 
+      IBUF_LOW_PWR => false,  -- Low power (TRUE) vs. performance (FALSE) setting for referenced I/O standards
+      IOSTANDARD   => "DEFAULT")
     port map (
-
-      -- Clock in ports
-      clk_in1_p => fco_p,
-      clk_in1_n => fco_n,
-      -- Clock out ports  
-      clk_out1  => fco
+      -- O  => dco_ibuf,                   -- Buffer output
+      O  => fco,
+      I  => fco_p,  -- Diff_p buffer input (connect directly to top-level port)
+      IB => fco_n   -- Diff_n buffer input (connect directly to top-level port)
       );
 
+  -----------------------------------------------------------------------------
   dcm1_locked_d_ps : process (CLK1) is
   begin  -- process dcm1_locked_d_ps
     if CLK1'event and CLK1 = '1' then   -- rising clock edge

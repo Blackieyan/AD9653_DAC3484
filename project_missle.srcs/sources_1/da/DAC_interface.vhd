@@ -6,7 +6,7 @@
 -- Author     :   <Blackie@BLACKIE-PC>
 -- Company    : 
 -- Created    : 2015-05-07
--- Last update: 2017-05-26
+-- Last update: 2017-05-31
 -- Platform   : 
 -- Standard   : VHDL'93/02
 -------------------------------------------------------------------------------
@@ -33,9 +33,10 @@ entity DAC_interface is
 
 
   port (
-    rst_n     : in  std_logic;
+    rst     : in  std_logic;
     CLK       : in  std_logic;          -- clk 500MHz 0degree
     CLK_div   : in  std_logic;          --clk 250MHz
+    clk_dly : in std_logic;             --clk 200MHz
     Q_p       : out std_logic_vector(15 downto 0);
     Q_n       : out std_logic_vector(15 downto 0);
     frame_p   : out std_logic;
@@ -60,8 +61,8 @@ architecture str of DAC_interface is
   signal Data_B_inter : std_logic_vector(15 downto 0) := x"1111";
   signal Data_C_inter : std_logic_vector(15 downto 0) := x"2222";
   signal data_D_inter : std_logic_vector(15 downto 0) := x"3333";
-  -- signal rst_n              : std_logic;
-  signal rom_addr_cnt : std_logic_vector(9 downto 0);
+  -- signal rst              : std_logic;
+  signal rom_addr_cnt : std_logic_vector(9 downto 0) := "0000000000";
   signal rom_dout     : std_logic_vector(15 downto 0);
 
   component rom
@@ -76,9 +77,10 @@ architecture str of DAC_interface is
 
   component DATAout_IOB is
     port (
-      rst_n     : in  std_logic;
+      rst     : in  std_logic;
       CLK       : in  std_logic;
       CLK_div   : in  std_logic;
+      clk_dly : in std_logic;
       Q_p       : out std_logic_vector(15 downto 0);
       Q_n       : out std_logic_vector(15 downto 0);
       frame_p   : out std_logic;
@@ -98,9 +100,10 @@ begin  -- architecture str
 
   DATAout_IOB_1 : DATAout_IOB
     port map (
-      rst_n     => rst_n,
+      rst     => rst,
       CLK       => CLK,
       CLK_div   => CLK_div,
+       CLK_dly => clk_dly,
       Q_p       => Q_p,
       Q_n       => Q_n,
       frame_p   => frame_p,
@@ -121,13 +124,13 @@ begin  -- architecture str
   Inst_rom : rom
              port map (
                clka  => clk_div,
-               rsta  => not rst_n,
+               rsta  => rst,
                ena   => Data_en,
                addra => rom_addr_cnt,
                douta => rom_dout
                );
 
-  main_counter_ps : process (clk_div, rst_n) is
+  main_counter_ps : process (clk_div) is
   begin  -- process main_counter_ps
     if clk_div'event and clk_div = '1' then  -- rising clock edge
       rom_addr_cnt <= rom_addr_cnt + 1;
@@ -135,9 +138,9 @@ begin  -- architecture str
   end process;
 
 
-  Data_A_cnt_ps : process (clk_div, rst_n) is
+  Data_A_cnt_ps : process (clk_div, rst) is
   begin  -- process Data_A_cnt_ps
-    if rst_n = '0' then                 -- asynchronous reset (active low)
+    if rst = '1' then                 -- asynchronous reset (active low)
       Data_A_inter <= x"0000";
     elsif clk_div'event and clk_div = '1' then  -- rising clock edge
       if data_en = '1' then
@@ -147,21 +150,21 @@ begin  -- architecture str
     end if;
   end process Data_A_cnt_ps;
 
-  Data_B_cnt_ps : process (clk_div, rst_n) is
+  Data_B_cnt_ps : process (clk_div, rst) is
   begin  -- process Data_B_cnt_ps
-    if rst_n = '0' then                 -- asynchronous reset (active low)
+    if rst = '1' then                 -- asynchronous reset (active low)
       Data_B_inter <= (others => '0');
-            Data_C_inter <= (others => '0');
-            Data_D_inter <= (others => '0');
+      Data_C_inter <= (others => '0');
+      Data_D_inter <= (others => '0');
     elsif clk_div'event and clk_div = '1' then  -- rising clock edge
       if data_en = '1' then
-        -- Data_B_inter <= (Data_B_inter(15 downto 8)+1)&x"00";
-        -- Data_C_inter <= (Data_C_inter(15 downto 8)+2)&x"00";
-        -- Data_D_inter <= (Data_D_inter(15 downto 8)+4)&x"00";
+         Data_B_inter <= Data_B_inter+7;
+         Data_C_inter <= Data_C_inter+11;
+         Data_D_inter <= Data_D_inter+17;
         
-        Data_B_inter <=(others => '0');
-        Data_C_inter <=(others => '0');
-        Data_D_inter <=(others => '0');
+--        Data_B_inter <=(others => '0');
+--        Data_C_inter <=(others => '0');
+--        Data_D_inter <=(others => '0');
       -- Data_B <= ram_dout;
       end if;
     end if;

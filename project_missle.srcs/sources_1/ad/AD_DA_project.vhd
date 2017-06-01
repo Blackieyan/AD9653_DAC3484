@@ -34,6 +34,7 @@ use UNISIM.VComponents.all;
 entity AD_DA_project is
   port (
     user_pushbutton_g : in  std_logic;  --global reset_n by pushbutton on pcb
+    re_sync_in : in std_logic; -- re_sync button for the dco align adjustment
     osc_in_p          : in  std_logic;
     osc_in_n          : in  std_logic;
     ----------------------------------------------------------------------------
@@ -46,10 +47,10 @@ entity AD_DA_project is
     fco_n             : in  std_logic;
     -- bitslip : in std_logic;
     ---------------------------------------------------------------------------
-    a_d0_p            : in  std_logic;
-    a_d0_n            : in  std_logic;
-    a_d1_p            : in  std_logic;
-    a_d1_n            : in  std_logic;
+    ch_d0_p      : in  std_logic_vector(3 downto 0);
+    ch_d0_n      : in  std_logic_vector(3 downto 0);
+    ch_d1_p      : in  std_logic_vector(3 downto 0);
+    ch_d1_n      : in  std_logic_vector(3 downto 0); 
     ---------------------------------------------------------------------------
     ---------------------------------------------------------------------------
     --dac3484 interface
@@ -66,7 +67,10 @@ entity AD_DA_project is
     -- spi interface
     SDIO              : out std_logic;
     SCLK              : out std_logic;
-    SDENB             : out std_logic
+    SDENB             : out std_logic;
+    ---------------------------------------------------------------------------
+    dly_rdy      : out std_logic;
+    tap_out      : out std_logic_vector(4 downto 0)
     );
 end AD_DA_project;
 
@@ -85,35 +89,42 @@ architecture Behavioral of AD_DA_project is
   signal fco           : std_logic;
   signal dco           : std_logic;
   signal dco_div       : std_logic;
-  signal rst_n         : std_logic;
+  signal rst         : std_logic;
   signal bitslip       : std_logic;
   signal Addr_in       : std_logic_vector(7 downto 0);
   signal Addr_en       : std_logic;
   signal data_in       : std_logic_vector(15 downto 0);
-  signal reg_rst_n     : std_logic;
+  signal reg_rst     : std_logic;
   signal reg_rdy       : std_logic;
   signal Data_A        : std_logic_vector(15 downto 0) := x"0000";
   signal Data_B        : std_logic_vector(15 downto 0) := x"1111";
   signal Data_C        : std_logic_vector(15 downto 0) := x"2222";
   signal data_D        : std_logic_vector(15 downto 0) := x"3333";
+  signal data_out : std_logic_vector(63 downto 0);
+  
   component ADC_interface is
-    port (
-      rst_n       : in  std_logic;
-      a_d0_p      : in  std_logic;
-      a_d0_n      : in  std_logic;
-      a_d1_p      : in  std_logic;
-      a_d1_n      : in  std_logic;
-      dco         : in  std_logic;
-      dco_div     : in  std_logic;
-      fco         : in  std_logic;
-      fifo_a_dout : out std_logic_vector(15 downto 0));
-  end component ADC_interface;
+  port (
+    rst          : in  std_logic;
+    ch_d0_p      : in  std_logic_vector(3 downto 0);
+    ch_d0_n      : in  std_logic_vector(3 downto 0);
+    ch_d1_p      : in  std_logic_vector(3 downto 0);
+    ch_d1_n      : in  std_logic_vector(3 downto 0);
+    dco          : in  std_logic;
+    dco_div      : in  std_logic;
+    fco          : in  std_logic;
+    dly_clk      : in  std_logic;
+    re_sync_in   : in  std_logic;
+    dly_rdy      : out std_logic;
+    tap_out      : out std_logic_vector(4 downto 0);
+    data_out : out std_logic_vector(63 downto 0));
+end component ADC_interface;
 
   component DAC_interface is
     port (
-      rst_n     : in  std_logic;
+      rst     : in  std_logic;
       CLK       : in  std_logic;
       CLK_div   : in  std_logic;
+      clk_dly : in std_logic;
       Q_p       : out std_logic_vector(15 downto 0);
       Q_n       : out std_logic_vector(15 downto 0);
       frame_p   : out std_logic;
@@ -154,7 +165,7 @@ architecture Behavioral of AD_DA_project is
       Addr_in   : in  std_logic_vector(7 downto 0);
       Addr_en   : in  std_logic;
       Data_in   : in  std_logic_vector(15 downto 0);
-      reg_rst_n : in  std_logic;
+      reg_rst : in  std_logic;
       reg_rdy   : out std_logic;
       SCLK      : out std_logic;
       SDIO      : out std_logic;
@@ -172,23 +183,28 @@ architecture Behavioral of AD_DA_project is
 -------------------------------------------------------------------------------
 begin
 
-  ADC_interface_inst : ADC_interface
-    port map (
-      rst_n       => rst_n,
-      a_d0_p      => a_d0_p,
-      a_d0_n      => a_d0_n,
-      a_d1_p      => a_d1_p,
-      a_d1_n      => a_d1_n,
-      dco         => dco,
-      dco_div     => dco_div,
-      fco         => fco,
-      fifo_a_dout => fifo_a_dout);
+ADC_interface_inst: ADC_interface
+  port map (
+    rst          => rst,
+    ch_d0_p      => ch_d0_p,
+    ch_d0_n      => ch_d0_n,
+    ch_d1_p      => ch_d1_p,
+    ch_d1_n      => ch_d1_n,
+    dco          => dco,
+    dco_div      => dco_div,
+    fco          => fco,
+    dly_clk      => clk_200M,
+    re_sync_in   => re_sync_in,
+    dly_rdy      => dly_rdy,
+    tap_out      => tap_out,
+    data_out => data_out);
 
   DAC_interface_inst : DAC_interface
     port map (
-      rst_n     => rst_n,
+      rst     => rst,
       CLK       => CLK_500M,            -- clk 500MHz 0degree
       CLK_div   => CLK_250M,            --clk 250MHz
+      clk_dly => CLK_200M,
       Q_p       => Q_p,
       Q_n       => Q_n,
       frame_p   => frame_p,
@@ -209,7 +225,7 @@ begin
       Addr_in   => Addr_in,
       Addr_en   => Addr_en,
       Data_in   => Data_in,
-      reg_rst_n => rst_n,
+      reg_rst => rst,
       reg_rdy   => reg_rdy,
       SCLK      => SCLK,
       SDIO      => SDIO,
@@ -234,15 +250,15 @@ begin
       CLK_250M          => CLK_250M);
 
 
-  rst_n_ps: process (user_pushbutton_g, lck_rst_n) is
-  begin  -- process rst_n_ps
-      reg_rst_n <= (not user_pushbutton_g) and lck_rst_n;
-  end process rst_n_ps;
+  rst_ps: process (user_pushbutton_g, lck_rst_n) is
+  begin  -- process rst_ps
+      reg_rst <=  user_pushbutton_g or not(lck_rst_n);
+  end process rst_ps;
 
      BUFG_inst : BUFG
    port map (
-      O => rst_n, -- 1-bit output: Clock output
-      I => reg_rst_n  -- 1-bit input: Clock input
+      O => rst, -- 1-bit output: Clock output
+      I => reg_rst  -- 1-bit input: Clock input
    );
 
   ---------------------------------------------------------------------------

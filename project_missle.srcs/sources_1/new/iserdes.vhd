@@ -52,6 +52,7 @@ entity iserdes is
     data_in1_n   : in  std_logic;
     BITSLIP_low  : in  std_logic;
     BITSLIP_high : in  std_logic;
+    cascade_out  : out std_logic_vector(1 downto 0);
     data_combine : out std_logic_vector(15 downto 0)
     );
 end iserdes;
@@ -89,32 +90,6 @@ BITSLIP(1)<=BITSLIP_high ;
 
   channel_iserdes_inst : for i in 0 to 1 generate
   begin
-    -- IDELAYE2_inst : IDELAYE2
-    --  generic map (
-    --     CINVCTRL_SEL => "FALSE",          -- Enable dynamic clock inversion (FALSE, TRUE)
-    --     DELAY_SRC => "IDATAIN",           -- Delay input (IDATAIN, DATAIN)
-    --     HIGH_PERFORMANCE_MODE => "FALSE", -- Reduced jitter ("TRUE"), Reduced power ("FALSE")
-    --     IDELAY_TYPE => "VAR_LOAD",           -- FIXED, VARIABLE, VAR_LOAD, VAR_LOAD_PIPE
-    --     IDELAY_VALUE => 0,                -- Input delay tap setting (0-31)
-    --     PIPE_SEL => "FALSE",              -- Select pipelined mode, FALSE, TRUE
-    --     REFCLK_FREQUENCY => 200.0,        -- IDELAYCTRL clock input frequency in MHz (190.0-210.0, 290.0-310.0).
-    --     SIGNAL_PATTERN => "DATA"          -- DATA, CLOCK input signal
-    --  )
-    --  port map (
-    --     CNTVALUEOUT =>up_drdata(i), -- 5-bit output: Counter value output
-    --     DATAOUT => data_in_idelay_s(i),         -- 1-bit output: Delayed data output
-    --     C => up_clk,                     -- 1-bit input: Clock input
-    --     CE => '0',                   -- 1-bit input: Active high enable increment/decrement input
-    --     CINVCTRL => '0',       -- 1-bit input: Dynamic clock inversion input
-    --     CNTVALUEIN => up_dwdata(i*5+4 downto i*5),   -- 5-bit input: Counter value input
-    --     DATAIN => '0',           -- 1-bit input: Internal delay data input
-    --     IDATAIN => data_in_ibuf_s(i),         -- 1-bit input: Data input from the I/O
-    --     INC => '0',                 -- 1-bit input: Increment / Decrement tap delay input
-    --     LD => up_dld,                   -- 1-bit input: Load IDELAY_VALUE input
-    --     LDPIPEEN => '0',       -- 1-bit input: Enable PIPELINE register to load data input
-    --     REGRST => '0'            -- 1-bit input: Active-high reset tap-delay input
-    --  );
-
     ISERDESE2_inst : ISERDESE2
       generic map (
         DATA_RATE         => "DDR",     -- DDR, SDR
@@ -127,7 +102,7 @@ BITSLIP(1)<=BITSLIP_high ;
         INIT_Q3           => '0',
         INIT_Q4           => '0',
         INTERFACE_TYPE    => "NETWORKING",  -- MEMORY, MEMORY_DDR3, MEMORY_QDR, NETWORKING, OVERSAMPLE
-        IOBDELAY          => "none",     -- NONE, BOTH, IBUF, IFD
+        IOBDELAY          => "NONE",     -- NONE, BOTH, IBUF, IFD
         NUM_CE            => 2,         -- Number of clock enables (1,2)
         OFB_USED          => "FALSE",   -- Select OFB path (FALSE, TRUE)
         SERDES_MODE       => "MASTER",  -- MASTER, SLAVE
@@ -138,7 +113,7 @@ BITSLIP(1)<=BITSLIP_high ;
         SRVAL_Q4          => '0'
         )
       port map (
-        O         => open,                 -- 1-bit output: Combinatorial output
+        O         => cascade_out(i),                 -- 1-bit output: Combinatorial output
         -- Q1 - Q8: 1-bit (each) output: Registered data outputs
         Q1        => data_combine(8*i+0),
         Q2        => data_combine(8*i+1),
@@ -160,7 +135,7 @@ BITSLIP(1)<=BITSLIP_high ;
         -- CE1, CE2: 1-bit (each) input: Data register clock enable inputs
         CE1          => '1',
         CE2          => '1',
-        CLKDIVP      => div_clk,        -- 1-bit input: TBD
+        CLKDIVP      => '0',        -- 1-bit input: TBD
         -- Clocks: 1-bit (each) input: ISERDESE2 clock input ports
         CLK          => CLK,            -- 1-bit input: High-speed clock
         CLKB         => not clk,  -- 1-bit input: High-speed secondary clock
@@ -176,8 +151,8 @@ BITSLIP(1)<=BITSLIP_high ;
         OCLKB        => '0',  -- 1-bit input: High speed negative edge output clock
         RST          => RST,  -- 1-bit input: Active high asynchronous reset
         -- SHIFTIN1, SHIFTIN2: 1-bit (each) input: Data width expansion input ports
-        SHIFTIN1     => SHIFTIN1(i),
-        SHIFTIN2     => SHIFTIN2(i)
+        SHIFTIN1     => '0',
+        SHIFTIN2     => '0'
         );
 
   end generate;
