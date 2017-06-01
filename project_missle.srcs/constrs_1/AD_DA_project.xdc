@@ -2,16 +2,15 @@
 
 #set_property PACKAGE_PIN AJ32 [get_ports {cascade_out[0]}]
 #set_property PACKAGE_PIN AK32 [get_ports {cascade_out[1]}]
-set_property PACKAGE_PIN AV40 [get_ports rst_in]
+
 set_property PACKAGE_PIN AP40 [get_ports re_sync_in]
 set_property PACKAGE_PIN AM39 [get_ports dly_rdy]
-set_property PACKAGE_PIN H19 [get_ports dly_clk_p]
-set_property IOSTANDARD LVCMOS18 [get_ports {cascade_out[0]}]
-set_property IOSTANDARD LVCMOS18 [get_ports {cascade_out[1]}]
-set_property IOSTANDARD LVDS [get_ports dly_clk_p]
+
+
+
 set_property IOSTANDARD LVCMOS18 [get_ports dly_rdy]
 set_property IOSTANDARD LVCMOS18 [get_ports re_sync_in]
-set_property IOSTANDARD LVCMOS18 [get_ports rst_in]
+
 
 set_property PACKAGE_PIN AN39 [get_ports {tap_out[0]}]
 set_property PACKAGE_PIN AR37 [get_ports {tap_out[1]}]
